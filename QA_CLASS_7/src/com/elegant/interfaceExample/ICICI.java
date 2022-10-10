@@ -18,11 +18,7 @@ I.savings();
 		
 	}
 
-	@Override
-	public void creditcard() {
-		System.out.println("ICICI CREDIT CARD CHARGES 100$");
-		
-	}
+
 
 	
 
