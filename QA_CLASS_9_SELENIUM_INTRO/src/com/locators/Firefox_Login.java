@@ -2,13 +2,14 @@ package com.locators;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class Xpath_Click_Type {
+public class Firefox_Login {
 
 	public static void main(String[] args) throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "S:\\ELEGANT_WORKSPACE\\DRIVERS\\chromedriver.exe");
-		WebDriver d= new ChromeDriver();
+		System.setProperty("webdriver.gecko.driver", "S:\\ELEGANT_WORKSPACE\\DRIVERS\\geckodriver.exe");
+		WebDriver d= new FirefoxDriver();
+		
 		d.manage().window().maximize();
 		d.get("https://www.saucedemo.com");
 		Thread.sleep(2000);
@@ -19,7 +20,6 @@ public class Xpath_Click_Type {
 		d.findElement(By.xpath("//input[@id='login-button']")).click();
 		Thread.sleep(2000);
 		d.quit();
-		
 	}
 
 }

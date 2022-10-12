@@ -1,25 +1,33 @@
-package com.locators;
+package Tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Xpath_Click_Type {
+public class LoginTest {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) {
 		System.setProperty("webdriver.chrome.driver", "S:\\ELEGANT_WORKSPACE\\DRIVERS\\chromedriver.exe");
 		WebDriver d= new ChromeDriver();
 		d.manage().window().maximize();
 		d.get("https://www.saucedemo.com");
-		Thread.sleep(2000);
-		d.findElement(By.xpath("//input[@id='user-name']")).sendKeys("standard_user");
-		Thread.sleep(2000);
-		d.findElement(By.xpath("//input[@id='password']")).sendKeys("secret_sauce");
-		Thread.sleep(2000);
-		d.findElement(By.xpath("//input[@id='login-button']")).click();
-		Thread.sleep(2000);
-		d.quit();
 		
+		d.findElement(By.xpath("//input[@id='user-name']")).sendKeys("standard_user");
+	
+		d.findElement(By.xpath("//input[@id='password']")).sendKeys("secret_sauce1");
+
+		d.findElement(By.xpath("//input[@id='login-button']")).click();
+		
+		try {
+		d.findElement(By.xpath("//span[@class='title']"));
+		System.out.println("TEST CASE PASSED");
+		}
+		catch(Exception e) {
+			System.out.println("TEST CASE FAILED");
+			
+		}
+		d.quit();
+
 	}
 
 }
