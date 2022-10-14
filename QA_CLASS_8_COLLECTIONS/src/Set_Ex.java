@@ -20,6 +20,8 @@ public class Set_Ex {
 		names.add("STEVE");
 		names.add("HENRY");
 		
+		
+		
 		System.out.println(names.size());
 		
 		Iterator<String> itr=names.iterator();
